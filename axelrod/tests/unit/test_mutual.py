@@ -1,6 +1,6 @@
 """Tests for strategies Desperate, Hopeless, Willing, and Grim"""
 import axelrod
-
+from axelrod.random_ import random_choice
 from .test_player import TestPlayer
 
 C, D = axelrod.Actions.C, axelrod.Actions.D
@@ -22,7 +22,7 @@ class TestDesperate(TestPlayer):
         """
         Test that initial strategy defects.
         """
-        self.first_play_test(D)
+        self.first_play_test(random_choice())
 
     def test_responses(self):
 
@@ -47,7 +47,7 @@ class TestHopeless(TestPlayer):
         """
         Test that initial strategy cooperates.
         """
-        self.first_play_test(C)
+        self.first_play_test(random_choice())
 
     def test_responses(self):
 
@@ -72,7 +72,7 @@ class TestWilling(TestPlayer):
         """
         Test that initial strategy cooperates.
         """
-        self.first_play_test(C)
+        self.first_play_test(random_choice())
 
     def test_responses(self):
 
